@@ -1,0 +1,35 @@
+name: 'build-test'
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - 'releases/*'
+
+jobs:
+  artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate artifact to delete
+        run: |
+          echo $(date) > date.txt
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: artifact
+          path: date.txt
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: |
+          yarn
+          yarn run all
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: ./
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          expire-in: '30minutes'

@@ -1,0 +1,16 @@
+name: 'Purge artifacts'
+description: 'Automatically delete artifacts'
+branding:
+  icon: 'trash-2'
+  color: 'red'
+author: 'Pavel Kolář'
+inputs:
+  expire-in:
+    required: true
+    description: 'Human readable expire duration'
+  token:
+    required: true
+    description: 'Github auth token'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

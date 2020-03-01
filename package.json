@@ -1,0 +1,50 @@
+{
+  "name": "purge-artifacts-action",
+  "version": "0.0.1",
+  "description": "Github action for automatic deletion of artifacts",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write **/*.{ts,yml,json}",
+    "format-check": "prettier --check **/*.{ts,yml,json}",
+    "lint": "eslint src/**/*.ts",
+    "pack": "ncc build",
+    "test": "jest",
+    "test-watch": "jest --watch",
+    "all": "yarn run build && yarn run format && yarn run lint && yarn run pack && yarn run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kolpav/purge-artifacts-action"
+  },
+  "keywords": [
+    "github",
+    "action",
+    "artifact"
+  ],
+  "author": "Pavel Kolář",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/github": "^2.1.1",
+    "@octokit/core": "^2.4.2",
+    "@octokit/plugin-rest-endpoint-methods": "^3.2.0",
+    "date-fns": "^2.9.0",
+    "parse-duration": "^0.1.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.7.12",
+    "@typescript-eslint/parser": "^2.8.0",
+    "@zeit/ncc": "^0.20.5",
+    "eslint": "^5.16.0",
+    "eslint-plugin-github": "^2.0.0",
+    "eslint-plugin-jest": "^22.21.0",
+    "jest": "^24.9.0",
+    "jest-circus": "^24.9.0",
+    "js-yaml": "^3.13.1",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.6.4"
+  }
+}
