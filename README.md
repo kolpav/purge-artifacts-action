@@ -36,6 +36,9 @@ jobs:
           expire-in: 7days # Setting this to 0 will delete all artifacts
 ```
 
+If you reach size limit, you can temporarily change to `on: push` and run it immediately.
+Even if the action succeeded, it will take a few more minutes for the artifacts to actually disappear.
+
 ## Contributing
 
 There are few improvements to be made, namely
