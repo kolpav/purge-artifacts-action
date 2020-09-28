@@ -14,7 +14,7 @@ export function shouldDelete(
 ): boolean {
   const { expireInMs, onlyPrefix, exceptPrefix } = actionInputs
 
-  const included = artifact.name.startsWith(onlyPrefix)
+  const included = onlyPrefix === '' || artifact.name.startsWith(onlyPrefix)
   const excluded = exceptPrefix && artifact.name.startsWith(exceptPrefix)
   const expired =
     differenceInMilliseconds(new Date(), new Date(artifact.created_at)) >=
