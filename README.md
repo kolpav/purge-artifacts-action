@@ -36,6 +36,26 @@ jobs:
           expire-in: 7days # Setting this to 0 will delete all artifacts
 ```
 
+### Optional arguments
+
+#### `onlyPrefix`
+
+Only purge artifacts that start with `tmp_` as a prefix.
+
+```yaml
+with:
+  onlyPrefix: tmp_  
+```
+
+#### `exceptPrefix`
+
+Exclude any artifacts that start with `prod_` as a prefix
+
+```yaml
+with:
+  exceptPrefix: prod_
+```
+
 ## Contributing
 
 There are few improvements to be made, namely
