@@ -12,10 +12,15 @@ export function shouldDelete(
   artifact: ActionsListArtifactsForRepoResponseArtifactsItem,
   actionInputs: IActionInputs
 ): boolean {
+  const { expireInMs, onlyPrefix, exceptPrefix } = actionInputs
+
+  const included = artifact.name.startsWith(onlyPrefix)
+  const excluded = exceptPrefix && artifact.name.startsWith(exceptPrefix)
   const expired =
     differenceInMilliseconds(new Date(), new Date(artifact.created_at)) >=
-    actionInputs.expireInMs
-  return expired
+    expireInMs
+
+  return included && !excluded && expired
 }
 
 export async function main(): Promise<void> {
