@@ -25,7 +25,7 @@
   "author": "Pavel Kolář",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.0",
+    "@actions/core": "^1.2.6",
     "@actions/github": "^2.1.1",
     "@octokit/core": "^2.4.2",
     "@octokit/plugin-rest-endpoint-methods": "^3.2.0",
