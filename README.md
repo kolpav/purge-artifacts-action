@@ -1,3 +1,8 @@
+# No longer maintained
+
+This project was created as temporary solution to problem I saw a lot of people to have but it seems people at github have no intention of fixing and neither do I.
+I recommend looking at other projects or you could use this as starting point for your own action.
+
 # Delete artifacts action
 
 Action responsible for deleting old artifacts by setting expire duration.
@@ -38,6 +43,4 @@ jobs:
 
 ## Contributing
 
-There are few improvements to be made, namely
-- More delete strategies (name, size, number of occurences, regex match on name etc..)
-- Better test coverage
+I would take a look at other maintained projects and contribute to them.
