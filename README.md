@@ -41,9 +41,9 @@ jobs:
           expire-in: 7days # Setting this to 0 will delete all artifacts
 ```
 
-### Optional arguments
+## Optional arguments
 
-#### `onlyPrefix`
+### `onlyPrefix`
 
 Only purge artifacts that start with `tmp_` as a prefix.
 
@@ -52,7 +52,7 @@ with:
   onlyPrefix: tmp_  
 ```
 
-#### `exceptPrefix`
+### `exceptPrefix`
 
 Exclude any artifacts that start with `prod_` as a prefix
 
@@ -60,6 +60,11 @@ Exclude any artifacts that start with `prod_` as a prefix
 with:
   exceptPrefix: prod_
 ```
+
+## Note
+
+If you reach size limit, you can temporarily change to `on: push` and run it immediately.
+Even if the action succeeded, it will take a few more minutes for the artifacts to actually disappear.
 
 ## Contributing
 
