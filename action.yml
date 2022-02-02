@@ -11,6 +11,14 @@ inputs:
   token:
     required: true
     description: 'Github auth token'
+  onlyPrefix:
+    required: false
+    description: 'Only artifacts with the specified prefix will be deleted'
+    default: ''
+  exceptPrefix:
+    required: false
+    description: 'Artifacts with this prefix will not be included for deletion'
+    default: ''
 runs:
   using: 'node12'
   main: 'dist/index.js'

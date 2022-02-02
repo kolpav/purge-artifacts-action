@@ -44,9 +44,14 @@ export async function* eachArtifact(
 
 export interface IActionInputs {
   expireInMs: number
+  onlyPrefix: string
+  exceptPrefix: string
 }
 export function getActionInputs(): IActionInputs {
   const expireInHumanReadable = core.getInput('expire-in', { required: true })
   const expireInMs = parseDuration(expireInHumanReadable)
-  return { expireInMs }
+  const onlyPrefix = core.getInput('onlyPrefix', { required: false })
+  const exceptPrefix = core.getInput('exceptPrefix', { required: false })
+
+  return { expireInMs, onlyPrefix, exceptPrefix }
 }
