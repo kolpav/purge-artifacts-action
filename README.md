@@ -1,3 +1,8 @@
+# No longer maintained
+
+This project was created as temporary solution to problem I saw a lot of people to have but it seems people at github have no intention of fixing and neither do I.
+I recommend looking at other projects or you could use this as starting point for your own action.
+
 # Delete artifacts action
 
 Action responsible for deleting old artifacts by setting expire duration.
@@ -36,11 +41,31 @@ jobs:
           expire-in: 7days # Setting this to 0 will delete all artifacts
 ```
 
+## Optional arguments
+
+### `onlyPrefix`
+
+Only purge artifacts that start with `tmp_` as a prefix.
+
+```yaml
+with:
+  onlyPrefix: tmp_  
+```
+
+### `exceptPrefix`
+
+Exclude any artifacts that start with `prod_` as a prefix
+
+```yaml
+with:
+  exceptPrefix: prod_
+```
+
+## Note
+
 If you reach size limit, you can temporarily change to `on: push` and run it immediately.
 Even if the action succeeded, it will take a few more minutes for the artifacts to actually disappear.
 
 ## Contributing
 
-There are few improvements to be made, namely
-- More delete strategies (name, size, number of occurences, regex match on name etc..)
-- Better test coverage
+I would take a look at other maintained projects and contribute to them.
