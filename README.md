@@ -3,7 +3,7 @@
 This project was created as temporary solution to problem I saw a lot of people to have but it seems people at github have no intention of fixing and neither do I.
 I recommend looking at other projects or you could use this as starting point for your own action.
 
-You could also +1 [this issue](https://github.com/actions/upload-artifact/issues/290) in hopes it gets noticed.
+You could also +1 [this issue](https://github.com/actions/upload-artifact/issues/290)
 
 # Delete artifacts action
 
