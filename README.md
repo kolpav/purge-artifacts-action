@@ -3,6 +3,8 @@
 This project was created as temporary solution to problem I saw a lot of people to have but it seems people at github have no intention of fixing and neither do I.
 I recommend looking at other projects or you could use this as starting point for your own action.
 
+You could also +1 [this issue](https://github.com/actions/upload-artifact/issues/290) in hopes it gets noticed.
+
 # Delete artifacts action
 
 Action responsible for deleting old artifacts by setting expire duration.
