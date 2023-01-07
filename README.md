@@ -5,6 +5,8 @@ I recommend looking at other projects or you could use this as starting point fo
 
 You could also +1 [this issue](https://github.com/actions/upload-artifact/issues/290)
 
+or take a look at this comment from the same issue https://github.com/actions/upload-artifact/issues/290#issuecomment-1374207010
+
 # Delete artifacts action
 
 Action responsible for deleting old artifacts by setting expire duration.
