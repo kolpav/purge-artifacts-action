@@ -20,5 +20,5 @@ inputs:
     description: 'Artifacts with this prefix will not be included for deletion'
     default: ''
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'

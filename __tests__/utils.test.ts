@@ -25,7 +25,7 @@ describe('eachArtifact', () => {
   test('iterates over all artifacts', async () => {
     const maxPerPage = 100
     const totalCount = 117
-    const artifacts = []
+    const artifacts: number[] = []
     for (let i = 0; i < totalCount; i++) {
       artifacts[i] = i
     }

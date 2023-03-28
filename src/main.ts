@@ -33,18 +33,18 @@ export async function main(): Promise<void> {
     for await (const artifact of eachArtifact(octokit)) {
       if (shouldDelete(artifact, actionInputs)) {
         deletedArtifacts.push(artifact)
+        // eslint-disable-next-line i18n-text/no-en
         core.debug(`Deleting artifact:\n${JSON.stringify(artifact, null, 2)}`)
         await octokit.actions.deleteArtifact({
           owner: github.context.repo.owner,
           repo: github.context.repo.repo,
-          // eslint-disable-next-line @typescript-eslint/camelcase
           artifact_id: artifact.id
         })
       }
     }
     core.setOutput('deleted-artifacts', JSON.stringify(deletedArtifacts))
   } catch (error) {
-    core.setFailed(error.message)
+    core.setFailed((error as Error).message)
   }
 }
 
